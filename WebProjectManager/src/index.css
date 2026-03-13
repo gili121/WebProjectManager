@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Color Palette - Soft Sky & Lavender */
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-soft: #e0e7ff;
+  --accent: #06b6d4;
+  --accent-soft: #cffafe;
+  --success: #10b981;
+  --success-soft: #d1fae5;
+  --warning: #f59e0b;
+  --warning-soft: #fef3c7;
+  --danger: #ef4444;
+  --danger-soft: #fee2e2;
+
+  /* Neutrals */
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --border: #e2e8f0;
+  --border-focus: #6366f1;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(99,102,241,0.08), 0 2px 6px rgba(0,0,0,0.06);
+  --shadow-lg: 0 12px 40px rgba(99,102,241,0.12), 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-xl: 0 24px 60px rgba(99,102,241,0.15), 0 8px 20px rgba(0,0,0,0.10);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  font-family: 'Nunito', 'Varela Round', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(99,102,241,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.05) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', 'Varela Round', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5em;
+  line-height: 1.3;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--primary-light);
+}
+
+/* ── Global Button Reset ── */
+button {
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border);
+  padding: 0.55em 1.3em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Nunito', 'Varela Round', sans-serif;
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.22s ease;
+  letter-spacing: 0.01em;
+}
+button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-soft);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+button:active {
+  transform: translateY(0);
+}
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ── MUI Override: Global TextField ── */
+.MuiOutlinedInput-root {
+  border-radius: var(--radius-md) !important;
+  background: var(--surface) !important;
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+  transition: box-shadow 0.2s ease !important;
+}
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-light) !important;
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary) !important;
+  border-width: 2px !important;
+}
+.MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12) !important;
+}
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary) !important;
+}
+.MuiInputLabel-root {
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+}
+
+/* ── MUI Button Override ── */
+.MuiButton-root {
+  border-radius: var(--radius-md) !important;
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.22s ease !important;
+}
+.MuiButton-contained {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light)) !important;
+  box-shadow: 0 4px 14px rgba(99,102,241,0.3) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25) !important;
+}
+.MuiButton-contained:hover {
+  box-shadow: 0 6px 20px rgba(99,102,241,0.4) !important;
+  transform: translateY(-1px) !important;
+}
+.MuiButton-outlined {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+}
+.MuiButton-outlined:hover {
+  background: var(--primary-soft) !important;
+  transform: translateY(-1px) !important;
+}
+.MuiButton-text {
+  color: var(--primary) !important;
+}
+
+/* ── MUI Paper Override ── */
+.MuiPaper-root {
+  border-radius: var(--radius-lg) !important;
+  border: 1.5px solid var(--border) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+  background: var(--surface) !important;
+}
+.MuiPaper-root:hover {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* ── MUI Typography ── */
+.MuiTypography-root {
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+}
+.MuiTypography-h4 {
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+}
+.MuiTypography-h6 {
+  font-family: 'Nunito', 'Varela Round', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+
+.MuiIconButton-root {
+  border-radius: var(--radius-sm) !important;
+  transition: all 0.2s ease !important;
+}
+.MuiIconButton-root:hover {
+  background: var(--primary-soft) !important;
+  color: var(--primary) !important;
+}
+
+/* ── MUI Alert ── */
+.MuiAlert-root {
+  border-radius: var(--radius-md) !important;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -58%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+
+
+body {
+  margin: 0;
+  font-family: 'Nunito', 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #dbe4ff 0%, #c7d2fe 40%, #d1fae5 100%);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #dbe4ff 0%, #c7d2fe 40%, #d1fae5 100%);
+  background-attachment: fixed;
+}

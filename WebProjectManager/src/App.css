@@ -1,0 +1,59 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  text-align: center;
+}
+
+/* ── Page Wrapper ── */
+.page-container {
+  min-height: 100vh;
+  padding: 2rem;
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* ── Kanban Card ── */
+.task-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin: 10px 8px;
+  text-align: right;
+  transition: all 0.22s ease;
+  box-shadow: var(--shadow-sm);
+  animation: fadeInUp 0.3s ease both;
+}
+.task-card:hover {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── Priority Chips ── */
+.priority-low    { color: var(--success);  background: var(--success-soft);  padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; }
+.priority-medium { color: var(--warning);  background: var(--warning-soft);  padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; }
+.priority-high   { color: var(--danger);   background: var(--danger-soft);   padding: 2px 8px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; }
+
+/* ── Column Headers (Kanban) ── */
+.column-header {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Form Card ── */
+.form-card {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 48px 44px;
+  animation: fadeInUp 0.4s ease both;
+}
+
+/* ── Utility ── */
+.text-muted { color: var(--text-muted); font-size: 0.82rem; }
+.text-secondary { color: var(--text-secondary); }
