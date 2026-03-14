@@ -1,5 +1,4 @@
 import { Typography, Box, Paper } from '@mui/material';
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@mui/material';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Stack from '@mui/material/Stack';
@@ -7,15 +6,12 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteProject } from '../Store/projectsSlice';
 import { useNavigate } from 'react-router-dom';
-import Alert from '@mui/material/Alert';
-import AlertTitle from '@mui/material/AlertTitle';
 import { useState } from "react";
 import EditIcon from '@mui/icons-material/Edit';
 import { useSelector } from 'react-redux';
 import IconButton from '@mui/material/IconButton';
 import { DeleteTask } from '../Store/tasksSlice';
-import { updateTask } from '../Store/tasksSlice'
-
+import HomeIcon from '@mui/icons-material/Home';
 
 
 const MyProjects = () => {
@@ -26,11 +22,8 @@ const MyProjects = () => {
     const [showAlert, setShowAlert] = useState(false);
     const project = location.state?.project;
     const tasks = useSelector(state => state.tasks.projectsTasks[project.name] || []);
-
-
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [taskToDelete, setTaskToDelete] = useState(null);
-
 
     const handleOpenDeleteDialog = (task) => {
         setTaskToDelete(task);
@@ -91,7 +84,6 @@ const MyProjects = () => {
         navigate('/AddTask', { state: { project, task } });
     };
 
-
     return (
         <Box sx={{ padding: '40px', minHeight: '100vh' }}>
 
@@ -122,44 +114,36 @@ const MyProjects = () => {
                     {/* אנימציה */}
                     <style>
                         {`
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translate(-50%, -60%); }
-          100% { opacity: 1; transform: translate(-50%, -50%); }
-        }
-      `}
+                     @keyframes fadeIn {
+                     0% { opacity: 0; transform: translate(-50%, -60%); }
+                     100% { opacity: 1; transform: translate(-50%, -50%); }
+                     } `
+                    }
                     </style>
                 </Box>
             )}
             {/*כפתור  חזרה לדף הבית*/}
             <Button
                 onClick={goToHome}
+                startIcon={<HomeIcon />}
                 sx={{
                     position: "absolute",
-                    top: "50px",
-                    right: "90px",
-                    padding: "10px 40px",
-                    minWidth: "0px",
-                    minHeight: "0px",
-                    background: "rgba(220,220,250,0.2)",
-                    borderRadius: "10px",
-                    border: "2px solid #a5b4fc",
+                    top: "35px",
+                    right: "35px",
+                    padding: "8px 18px",
+                    background: "transparent",
+                    border: "none",
+                    boxShadow: "none",
+                    textTransform: "none",
+                    fontWeight: 700,
+                    fontSize: "16px",
+                    color: "#4f46e5",
+                    "&:hover": {
+                    background: "rgba(99,102,241,0.08)"
+                    }
                 }}
             >
-                <Box
-                    sx={{
-                        fontSize: "18px",
-                        fontWeight: 800,
-                        fontFamily: "'Poppins', sans-serif",
-                        lineHeight: 1.3,
-                        background: "linear-gradient(135deg, #3b82f6, #818cf8)", // גרדיאנט בהיר יותר
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        textTransform: "none",
-                        cursor: "pointer",
-                    }}
-                >
-                    homePage
-                </Box>
+                HomePage
             </Button>
 
             {/* כותרת הפרויקט */}
@@ -568,12 +552,14 @@ const MyProjects = () => {
 
                         {/* אנימציה */}
                         <style>
+                            
                             {`
-        @keyframes fadeIn {
-          0% { opacity: 0; transform: translate(-50%, -60%); }
-          100% { opacity: 1; transform: translate(-50%, -50%); }
-        }
-      `}
+                             @keyframes fadeIn {
+                             0% { opacity: 0; transform: translate(-50%, -60%); }
+                             100% { opacity: 1; transform: translate(-50%, -50%); }
+                             }`
+                            }
+
                         </style>
                     </Box>
                 )}

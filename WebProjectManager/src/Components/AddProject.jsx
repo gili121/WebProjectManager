@@ -1,4 +1,3 @@
-// AddProject.jsx
 import React, { useState } from 'react';
 import { TextField, Box, Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
@@ -53,7 +52,6 @@ const AddProject = () => {
                 date: projectDate
             }));
         }
-
         navigate('/ListProject');
     };
 

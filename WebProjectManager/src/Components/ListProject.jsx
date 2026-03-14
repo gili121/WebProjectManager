@@ -3,6 +3,7 @@ import { Box, Paper, Typography, Button, TextField, InputAdornment } from '@mui/
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import HomeIcon from '@mui/icons-material/Home';
 
 const ListProject = () => {
 
@@ -54,37 +55,29 @@ const ListProject = () => {
 
       <Button
         onClick={goToHome}
+        startIcon={<HomeIcon />}
         sx={{
           position: "absolute",
-          top: "50px",
-          right: "90px",
-          padding: "10px 40px",
-          minWidth: "0px",
-          minHeight: "0px",
-          background: "rgba(220,220,250,0.2)",
-          borderRadius: "10px",
-          border: "2px solid #a5b4fc",
+          top: "35px",
+          right: "35px",
+          padding: "8px 18px",
+          background: "transparent",
+          border: "none",
+          boxShadow: "none",
+          textTransform: "none",
+          fontWeight: 700,
+          fontSize: "16px",
+          color: "#4f46e5",
+          "&:hover": {
+            background: "rgba(99,102,241,0.08)"
+          }
         }}
       >
-        <Box
-          sx={{
-            fontSize: "18px",
-            fontWeight: 800,
-            fontFamily: "'Poppins', sans-serif",
-            lineHeight: 1.3,
-            background: "linear-gradient(135deg, #3b82f6, #818cf8)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            textTransform: "none",
-            cursor: "pointer",
-          }}
-        >
-          homePage
-        </Box>
+        HomePage
       </Button>
 
       {/* חיפוש לפי פרויקט */}
-      <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 3, paddingTop: 12 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 7, paddingTop: 3 }}>
         <TextField
           label="Search Project"
           variant="outlined"

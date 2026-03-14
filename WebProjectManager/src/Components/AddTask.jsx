@@ -71,7 +71,6 @@ const AddTask = () => {
       }}
     >
       {/* משימה חדשה או עדכון של משימה*/}
-      {/* שם של המשימה- חובה */}
       <Controller
         name="name"
         control={control}
