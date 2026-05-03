@@ -1,0 +1,1 @@
+An advanced project and task management system built with React and Vite, featuring centralized state management (Redux Toolkit) and a responsive, intuitive user interface (Material UI) for efficient workflow.
